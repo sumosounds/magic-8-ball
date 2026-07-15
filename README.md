@@ -2,8 +2,6 @@
 
 An interactive, 3D Magic 8-Ball built with **React**, **TypeScript**, **Three.js**, and **React Three Fiber**.
 
-![Magic 8-Ball Preview](https://via.placeholder.com/800x400/111827/ffffff?text=Magic+8-Ball+Demo)
-
 ## ✨ Features
 
 - Realistic 3D Magic 8-Ball with glossy materials and glowing window
