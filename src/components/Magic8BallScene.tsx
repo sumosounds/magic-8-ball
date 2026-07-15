@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Sphere, Cylinder } from '@react-three/drei';
 import * as THREE from 'three';
@@ -9,7 +9,7 @@ interface Magic8BallSceneProps {
 
 export function Magic8BallScene({ isShaking }: Magic8BallSceneProps) {
   const ballRef = useRef<THREE.Group>(null);
-  const windowRef = useRef<THREE.Group>(null);
+  
 
   useFrame((state) => {
     if (ballRef.current) {
