@@ -9,29 +9,18 @@ interface Magic8BallSceneProps {
 
 export function Magic8BallScene({ isShaking }: Magic8BallSceneProps) {
   const ballRef = useRef<THREE.Group>(null);
-  
 
   useFrame((state) => {
     if (ballRef.current) {
       if (isShaking) {
-        // Strong shake while scanning
         ballRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 20) * 0.8;
         ballRef.current.rotation.y = Math.cos(state.clock.elapsedTime * 18) * 0.7;
       } else {
-        // Gentle idle rotation after shake
         ballRef.current.rotation.y = state.clock.elapsedTime * 0.12;
         ballRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.03;
       }
     }
   });
-
-  // Reset rotation when shaking stops
-  useEffect(() => {
-    if (!isShaking && ballRef.current) {
-      // Smoothly return to normal position
-      ballRef.current.rotation.x = 0.05;
-    }
-  }, [isShaking]);
 
   return (
     <group ref={ballRef}>
