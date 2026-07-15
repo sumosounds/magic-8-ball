@@ -1,6 +1,6 @@
 import { useState, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment } from '@react-three/drei';
+import { OrbitControls, Environment, ContactShadows } from '@react-three/drei';
 import confetti from 'canvas-confetti';
 import { Magic8BallScene } from './components/Magic8BallScene';
 
@@ -80,12 +80,46 @@ function App() {
         {/* 3D Ball */}
         <div className="absolute inset-0 z-10 flex items-center justify-center">
           <div className="w-[680px] h-[680px]">
-            <Canvas camera={{ position: [0, 1, 8], fov: 45 }}>
+            <Canvas
+              camera={{ position: [0, 1, 8], fov: 45 }}
+              gl={{ toneMappingExposure: 1.1 }}
+              shadows
+            >
               <Suspense fallback={null}>
                 <Magic8BallScene isShaking={isScanning} />
-                <ambientLight intensity={0.8} />
-                <pointLight position={[5, 8, 5]} intensity={2} color="#c4d0ff" />
-                <Environment preset="night" />
+
+                {/* Soft fill so the shadow side of the ball isn't pure black */}
+                <ambientLight intensity={0.4} />
+
+                {/* Key light — creates the bright specular highlight on the glossy shell */}
+                <spotLight
+                  position={[4, 6, 4]}
+                  angle={0.35}
+                  penumbra={1}
+                  intensity={3}
+                  color="#e6ecff"
+                  castShadow
+                />
+
+                {/* Cool rim/back light to separate the ball from the dark background */}
+                <directionalLight
+                  position={[-4, 3, -4]}
+                  intensity={0.6}
+                  color="#7c8cff"
+                />
+
+                {/* Studio HDRI reads much better on glossy/metallic PBR materials than "night" */}
+                <Environment preset="studio" />
+
+                {/* Soft shadow under the ball to sell the "product shot" look */}
+                <ContactShadows
+                  position={[0, -2.1, 0]}
+                  opacity={0.55}
+                  scale={12}
+                  blur={2.5}
+                  far={4}
+                />
+
                 <OrbitControls enablePan={false} enableZoom={true} minDistance={5} maxDistance={12} />
               </Suspense>
             </Canvas>
