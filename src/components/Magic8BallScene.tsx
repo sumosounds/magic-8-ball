@@ -13,22 +13,18 @@ export function Magic8BallScene({ isShaking }: Props) {
 
   useEffect(() => {
     scene.traverse((child: any) => {
-      if (child.isMesh) {
-        const name = child.name.toLowerCase();
-
-        // Hide the outer die — answers are shown via the HTML overlay instead
-        if (name.includes('die') || name.includes('cube') || name.includes('d20')) {
-          child.visible = false;
-          return;
-        }
-
-        // Let the ball shell cast/receive shadows and read its PBR maps correctly
-        child.castShadow = true;
-        child.receiveShadow = true;
-        if (child.material) {
-          child.material.envMapIntensity = 1.4;
-          child.material.needsUpdate = true;
-        }
+      if (child.isMesh && child.material) {
+        // The window is baked into the ball shell's own base color texture as
+        // hard alpha (opaque frame / transparent window), but the glTF file
+        // marks it as alphaMode "BLEND", which three.js renders with
+        // depthWrite disabled — so the "opaque" areas never actually occlude
+        // the die behind them. Switching to an alpha-tested cutout restores
+        // proper depth occlusion so only the window's transparent area shows
+        // the die, and everywhere else the shell hides it correctly.
+        child.material.transparent = false;
+        child.material.alphaTest = 0.5;
+        child.material.depthWrite = true;
+        child.material.needsUpdate = true;
       }
     });
   }, [scene]);
