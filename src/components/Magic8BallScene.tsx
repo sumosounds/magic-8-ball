@@ -44,7 +44,7 @@ export function Magic8BallScene({ isShaking }: Props) {
     <primitive
       ref={groupRef}
       object={scene}
-      scale={6.5}
+      scale={9.5}
       position={[0, -0.5, 0]}
     />
   );
