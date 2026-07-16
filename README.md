@@ -14,7 +14,7 @@ An interactive, 3D Magic 8-Ball built with **React**, **TypeScript**, **Three.js
 
 ## 🚀 Live Demo
 
-https://spiffy-torrone-3a1499.netlify.app/
+https://react-magic-8-ball.netlify.app/
 
 ## 🛠 Tech Stack
 
