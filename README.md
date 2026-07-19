@@ -1,39 +1,48 @@
 # Magic 8-Ball
 
-An interactive, 3D Magic 8-Ball built with **React**, **TypeScript**, **Three.js**, and **React Three Fiber**.
+An interactive, 3D Magic 8-Ball built with **pure vanilla JavaScript** and **Three.js**.
+
+![Magic 8-Ball Preview](https://react-magic-8-ball.netlify.app))
 
 ## ✨ Features
 
 - Realistic 3D Magic 8-Ball with glossy materials and glowing window
-- Authentic classic Magic 8-Ball responses
-- Smooth shake animation with physics-like motion
-- Responsive design optimized for desktop
+- Authentic classic Magic 8-Ball responses (20 answers)
+- Smooth shake animation
 - Orbit controls to rotate and inspect the ball
-- Confetti effect on positive answers
-- Built with modern React + Vite
+- Click or press Enter/Space to shake
+- Self-contained single HTML file (no build step required)
 
 ## 🚀 Live Demo
 
-https://react-magic-8-ball.netlify.app/
+https://spiffy-torrone-3a1499.netlify.app/
 
 ## 🛠 Tech Stack
 
-- **React 18** + **TypeScript**
-- **Vite** (fast development)
-- **Three.js** + **@react-three/fiber**
-- **@react-three/drei** (helpers)
-- **GSAP** style animations
-- **canvas-confetti**
+| Technology                  | Used For                                      | Details |
+|-----------------------------|-----------------------------------------------|-------|
+| **HTML5**                   | Structure                                     | Basic document with semantic elements |
+| **CSS3**                    | Styling & Layout                              | Modern CSS with custom properties, gradients, animations |
+| **Vanilla JavaScript (ES6+)** | Logic & Interactivity                        | No frameworks — pure JS |
+| **Three.js**                | 3D Rendering & Scene Management               | Core 3D library |
+| **GLTFLoader**              | Loading 3D Models                             | From Three.js examples |
+| **RoomEnvironment**         | HDRI lighting                                 | From Three.js examples |
 
-## 📦 Installation
+### Other Notable Features
+- Canvas WebGL — Rendering target
+- Import Maps — Modern way to load Three.js modules from CDN
+- Custom Tween Engine — Simple animation system
+- Pointer Events + Raycasting — Click detection on the 3D ball
+- RequestAnimationFrame Loop — Main render loop
 
-```bash
-# Clone the repo
-git clone https://github.com/YOUR-USERNAME/magic-8-ball.git
-cd magic-8-ball
+**Summary**: This is a **pure vanilla Three.js** It’s a self-contained single HTML file that loads a GLB model and adds interactivity directly with Three.js.
 
-# Install dependencies
-npm install
+## 📦 Installation & Running Locally
 
-# Run development server
-npm run dev
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/sumosounds/magic-8-ball.git
+   cd magic-8-ball
+   
+  
+
