@@ -2,9 +2,6 @@
 
 An interactive, 3D Magic 8-Ball built with **pure vanilla JavaScript** and **Three.js**.
 
-Preview:
-
-https://3d-web-magic-8-ball.netlify.app/
 
 ## ✨ Features
 
@@ -17,7 +14,7 @@ https://3d-web-magic-8-ball.netlify.app/
 
 ## 🚀 Live Demo
 
-https://spiffy-torrone-3a1499.netlify.app/
+https://3d-web-magic-8-ball.netlify.app/
 
 ## 🛠 Tech Stack
 
