@@ -4,7 +4,7 @@ An interactive, 3D Magic 8-Ball built with **pure vanilla JavaScript** and **Thr
 
 Preview:
 
-[https://3d-magic-8-ball.netlify.app/]
+https://3d-magic-8-ball.netlify.app/
 
 ## ✨ Features
 
