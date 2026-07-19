@@ -2,9 +2,9 @@
 
 An interactive, 3D Magic 8-Ball built with **pure vanilla JavaScript** and **Three.js**.
 
-![Magic 8-Ball Preview](https://via.placeholder.com/800x400/111827/ffffff?text=Magic+8-Ball)
+Preview:
 
-![Magic 8-Ball Preview](https://react-magic-8-ball.netlify.app))
+[https://3d-magic-8-ball.netlify.app/]
 
 ## ✨ Features
 
